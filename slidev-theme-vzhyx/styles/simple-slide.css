@@ -1,0 +1,155 @@
+.slidev-layout {
+	& h2 {
+		font: var(--font-h2);
+		color: var(--color);
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	& h3 {
+		font: var(--font-h3);
+		color: var(--color);
+		margin-bottom: 1rem;
+		margin-top: 2rem;
+	}
+
+	& ul {
+		color: var(--color);
+		padding-left: 2rem;
+		list-style-type: disc;
+	}
+
+	& ol {
+		color: var(--color);
+		padding-left: 2rem;
+		list-style-type: decimal;
+	}
+
+	& li {
+		font: var(--font-regular-text);
+		color: var(--color);
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+/* two column helper for simple slides */
+.whoami-layout {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	align-items: stretch;
+	column-gap: 1rem;
+}
+
+.whoami-left {
+	text-align: left;
+}
+
+.whoami-right {
+	/* center content within the right column both axes */
+	display: grid;
+	place-items: center;
+}
+
+/* tri positions on a simple slide */
+.tri-grid {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+/* Flow list with insert animations */
+.flow-list {
+	padding-left: 1rem;
+	list-style: disc;
+}
+
+.flow-list .slidev-vclick-target {
+	transition:
+		opacity 0.35s ease,
+		transform 0.35s ease;
+}
+
+.flow-list .slidev-vclick-hidden {
+	opacity: 0;
+	transform: translateY(-6px);
+	height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.flow-ins {
+	color: red !important;
+}
+
+.ins-flow-enter-active,
+.ins-flow-leave-active,
+.ins-flow-move {
+	transition: transform 0.35s ease;
+}
+
+/* Emphasis for after-note */
+.after-em {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+/* px vs rem demo buttons */
+.btn {
+	font-size: 1rem; /* шрифт в rem */
+	background: var(--color); /* белый в тёмной теме, тёмный в светлой */
+	color: var(--background);
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.btn-px {
+	padding: 16px 24px; /* в px */
+}
+
+.btn-rem {
+	padding: 1rem 1.5rem; /* в rem */
+}
+
+.btn-rem-big {
+	padding: 1.5rem 2rem; /* в rem */
+}
+
+/* two-column layout for px/rem slide */
+.px-rem-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 1.5rem;
+	align-items: start;
+}
+
+.px-rem-grid .col {
+	width: 100%;
+}
+
+.tri-item {
+	position: absolute;
+	font-size: 5rem;
+}
+
+.tri-left {
+	top: 0;
+	left: 0;
+	text-align: left;
+}
+
+.tri-right {
+	right: 0;
+	bottom: 47%;
+	text-align: right;
+}
+
+.tri-bottom {
+	left: 50%;
+	bottom: 2rem;
+	transform: translateX(-50%);
+	font-size: 5rem;
+	color: #e53935;
+}

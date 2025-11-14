@@ -1,0 +1,47 @@
+.slidev-layout.cover {
+	text-align: center;
+	color: var(--color);
+}
+
+.cover__container {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	height: 100%;
+	max-width: 75ch;
+	margin-inline: auto;
+	row-gap: 0.75rem;
+}
+
+.cover__slot {
+	display: grid;
+	place-items: center;
+}
+
+.cover__slot > * {
+	margin: 0;
+}
+
+.cover__line {
+	font: var(--font-regular-text);
+	font-size: 1.5rem;
+	letter-spacing: var(--font-smaller-text-letter-spacing);
+	opacity: 0.95;
+}
+
+.cover__tags {
+	margin-top: 0.5rem;
+	font: var(--font-alt-smaller-text);
+	font-size: 1.25rem;
+	letter-spacing: var(--font-alt-smaller-text-letter-spacing);
+	opacity: 0.8;
+}
+
+.cover h1 {
+	margin: 0 0 0.5rem;
+	font-weight: 700;
+	font-size: 4rem;
+	line-height: 1.08;
+	letter-spacing: -0.05em;
+	text-wrap: balance;
+	color: var(--color);
+}

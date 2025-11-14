@@ -1,0 +1,117 @@
+:root {
+	/* default theme color */
+	/* can be overrided by uses `themeConfig` option */
+	--slidev-theme-primary: #5d8392;
+
+	/* colors === figma */
+	--grey-black: #333333;
+	--grey-selection: #3333331a;
+	--grey-border: #33333399;
+	--black: #0b0400;
+
+	--light: #f1f1f1;
+	--light-border: #f1f1f199;
+	--white: white;
+	--white-sub: #ffffff80;
+
+	--blue: #566ae4;
+	--dark-blue: #3845cf;
+	--light-blue: #babde7;
+
+	/* typography naming === figma */
+	--font-h1-size: 1.75rem;
+	--font-h2-size: 1.5rem;
+	--font-h3-size: 1.25rem;
+	--font-regular-text-size: 1.125rem;
+
+	--font-descriptor-size: 1.25rem;
+	--font-smaller-text-size: 1rem;
+	--font-alt-smaller-text-size: 0.875rem;
+
+	--font-pagination-size: 0.875rem;
+
+	--font-ui-caps-size: 0.75rem;
+	--font-ui-mini-size: 0.75rem;
+	--font-ui-regular-size: 0.875rem;
+	--font-ui-medium-size: 0.875rem;
+
+	/* main */
+	--font-h1: normal 700 var(--font-h1-size) / 1.08 "JetBrains Mono";
+	--font-h2: normal 600 var(--font-h2-size) / 1.14 "JetBrains Mono";
+	--font-h3: normal 600 var(--font-h3-size) / 1.4 "JetBrains Mono";
+
+	--font-regular-text:
+		normal 400 var(--font-regular-text-size) / 1.54 "JetBrains Mono";
+	--font-pagination: normal 600 var(--font-h3-size) / 1.4 "JetBrains Mono";
+	/* ui */
+	--font-descriptor:
+		normal 600 var(--font-descriptor-size) / 1.55 "JetBrains Mono";
+
+	--font-smaller-text:
+		normal 400 var(--font-smaller-text-size) / 1.55 "JetBrains Mono";
+	--font-alt-smaller-text:
+		normal 500 var(--font-alt-smaller-text-size) / 1 "Inter";
+
+	--font-ui-caps: normal 400 var(--font-ui-caps-size) / 1.55 "JetBrains Mono";
+	--font-ui-mini: normal 100 var(--font-ui-mini-size) / 1.55 "JetBrains Mono";
+	/* caps меняется, этот нет? */
+	--font-ui-regular:
+		normal 400 var(--font-ui-regular-size) / 1.55 "JetBrains Mono";
+	--font-ui-meduim: normal 500 var(--font-ui-medium-size) / 1 "Inter";
+
+	/* letter-spacings */
+	--font-heading-letter-spacing: -5%;
+	--font-pagination-letter-spacing: -5%;
+
+	/* ui */
+	--font-smaller-text-letter-spacing: -3%;
+	--font-alt-smaller-text-letter-spacing: -2.5%;
+
+	--font-ui-caps-letter-spacing: -2.5%;
+	--font-ui-meduim-letter-spacing: -2.5%;
+	--font-ui-regular-letter-spacing: -3%;
+	--font-ui-mini-letter-spacing: -3.5%;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color: var(--white);
+		--background: var(--grey-black);
+
+		/* borders */
+		--border-color: var(--grey-border);
+
+		/* logo */
+		--logo-bg-color: var(--dark-blue);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color: var(--grey-black);
+		--background: var(--light);
+
+		/* borders */
+		--border-color: var(--light-border);
+
+		/* logo */
+		--logo-bg-color: var(--grey-black);
+	}
+}
+
+/* Runtime theme toggle (Slidev API) */
+html.dark,
+:root.dark {
+	--color: var(--white);
+	--background: var(--grey-black);
+	--border-color: var(--grey-border);
+	--logo-bg-color: var(--dark-blue);
+}
+
+html:not(.dark),
+:root.light {
+	--color: var(--grey-black);
+	--background: var(--light);
+	--border-color: var(--light-border);
+	--logo-bg-color: var(--grey-black);
+}
