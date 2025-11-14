@@ -205,49 +205,124 @@ transition: slide-left
 layout: simple-slide
 ---
 
-## Boolean Explosion 
+## 1. Boolean Explosion 
 
 <div class="explosion-layout">
   <div class="explosion-left">
-    <ul>
-      <v-click>
+    <v-clicks>
+      <ul>
         <li>1 флаг → 2 состояния</li>
-      </v-click>
-      <v-click>
         <li>2 флага → 4 состояния</li>
-      </v-click>
-      <v-click>
         <li>3 флага → 8 состояний</li>
-      </v-click>
-      <v-click>
         <li>4 флага → 16 состояний</li>
-      </v-click>
-      <v-click>
         <li>5 флагов → 32 состояния</li>
-      </v-click>
-      <v-click>
         <li>6 флагов → 64 состояния</li>
-      </v-click>
-    </ul>
+      </ul>
+    </v-clicks>
   </div>
+  
   <div class="explosion-right">
-    <v-click>
-      <img src="/images/slides/лампа.png" alt="Визуализация" class="explosion-img" />
-    </v-click>
-    <v-click>
-      <img src="/images/slides/font-size.png" alt="Визуализация" class="explosion-img" />
-    </v-click>
-    <v-click>
-      <img src="/images/slides/лампа.png" alt="Визуализация" class="explosion-img" />
-    </v-click>
-    <v-click>
-      <img src="/images/slides/font-size.png" alt="Визуализация" class="explosion-img" />
-    </v-click>
-    <v-click>
-      <img src="/images/slides/лампа.png" alt="Визуализация" class="explosion-img" />
-    </v-click>
-    <v-click>
-      <img src="/images/slides/font-size.png" alt="Визуализация" class="explosion-img" />
-    </v-click>
+    <ExplosionImage :images="[
+      '/images/slides/mr_incredrible/1.Cool.jpg',
+      '/images/slides/mr_incredrible/2.Norm.jpg',
+      '/images/slides/mr_incredrible/3.Norm.jpg',
+      '/images/slides/mr_incredrible/4.Bad.jpg',
+      '/images/slides/mr_incredrible/5.Worse.jpg',
+      '/images/slides/mr_incredrible/6.Worst.jpg'
+    ]" />
   </div>
+</div>
+
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## 2. Плоское мышление
+
+<div class="flat-thinking-layout">
+  <div class="flat-thinking-left">
+    <v-clicks>
+      <ul>
+        <li>Состояния неравны и не независимы</li>
+        <li>Лампочка не может быть одновременно «разбитая» и «горит»</li>
+        <li>Но при комбинации булевых флагов такое состояние возможно</li>
+        <li>Флаги позволяют создать невалидные комбинации</li>
+      </ul>
+    </v-clicks>
+  </div>
+  <div class="flat-thinking-right">
+    <img src="/images/slides/SHAROEB.jpg" alt="Визуализация" />
+  </div>
+</div>
+
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Почему нужно думать не переходами, а состояниями:
+
+<v-clicks>
+
+**Важный момент:**
+
+- Состояние → первично
+- Переходы → вторичны
+
+**Если мы чётко определяем:**
+
+- набор возможных состояний
+- где они находятся в иерархии
+- какие переходы разрешены, какие запрещены
+
+**То мы автоматически избегаем Boolean Explosion, нелегальные состояния и скрытые баги**
+
+</v-clicks>
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Историческая справка
+
+<div class="traffic-light-fsm">
+  <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Состояние: Красный -->
+    <circle cx="150" cy="200" r="50" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
+    <text x="150" y="210" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Красный</text>
+    
+    <!-- Состояние: Жёлтый -->
+    <circle cx="300" cy="200" r="50" fill="#fbbf24" stroke="#d97706" stroke-width="3"/>
+    <text x="300" y="210" text-anchor="middle" fill="#78350f" font-size="18" font-weight="bold">Жёлтый</text>
+    
+    <!-- Состояние: Зелёный -->
+    <circle cx="450" cy="200" r="50" fill="#16a34a" stroke="#15803d" stroke-width="3"/>
+    <text x="450" y="210" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Зелёный</text>
+    
+    <!-- Переход: Красный → Жёлтый -->
+    <path d="M 200 200 L 250 200" stroke="#4b5563" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- Переход: Жёлтый → Зелёный -->
+    <path d="M 350 200 L 400 200" stroke="#4b5563" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- Переход: Зелёный → Жёлтый (обратный) -->
+    <path d="M 400 200 L 350 200" stroke="#4b5563" stroke-width="3" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead-reverse)"/>
+    
+    <!-- Переход: Жёлтый → Красный (обратный) -->
+    <path d="M 250 200 L 200 200" stroke="#4b5563" stroke-width="3" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead-reverse)"/>
+    
+    <!-- Определение стрелок -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#4b5563"/>
+      </marker>
+      <marker id="arrowhead-reverse" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
+        <polygon points="10 0, 0 3, 10 6" fill="#4b5563"/>
+      </marker>
+    </defs>
+  </svg>
 </div>

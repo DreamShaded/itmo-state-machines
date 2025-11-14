@@ -196,27 +196,58 @@
 	min-height: 300px;
 }
 
-.explosion-img {
+.explosion-img,
+.explosion-right img {
 	max-width: 100%;
 	max-height: 60vh;
 	object-fit: contain;
 	display: block;
 }
 
-.explosion-right .slidev-vclick-hidden {
-	display: none;
+/* стили для explosion-img-wrapper теперь в компоненте ExplosionImage.vue */
+
+/* flat thinking layout - two columns */
+.flat-thinking-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2rem;
+	align-items: center;
 }
 
-.explosion-right .slidev-vclick-target {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: opacity 0.3s ease;
+.flat-thinking-left {
+	text-align: left;
+}
+
+.flat-thinking-right {
+	display: grid;
+	place-items: center;
+}
+
+.flat-thinking-right img {
+	max-width: 100%;
+	max-height: 70vh;
+	object-fit: contain;
+	display: block;
 }
 
 /* smaller code block */
 .code-small {
 	transform: scale(0.8);
 	margin-top: -3rem;
+}
+
+/* traffic light FSM diagram */
+.traffic-light-fsm {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+	margin-top: 2rem;
+}
+
+.traffic-light-fsm svg {
+	max-width: 100%;
+	max-height: 60vh;
+	width: auto;
+	height: auto;
 }
