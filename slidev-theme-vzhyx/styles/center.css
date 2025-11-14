@@ -60,3 +60,28 @@
 	max-width: 90%;
 	height: auto;
 }
+
+/* state definition - larger font */
+.slidev-layout.center .state-def {
+	font-size: 2rem;
+	line-height: 1.6;
+}
+
+/* backdrop layout - two columns */
+.slidev-layout.center .backdrop-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2rem;
+	align-items: center;
+	width: 100%;
+	max-width: 90%;
+}
+
+.slidev-layout.center .backdrop-left {
+	text-align: left;
+}
+
+.slidev-layout.center .backdrop-right {
+	display: grid;
+	place-items: center;
+}

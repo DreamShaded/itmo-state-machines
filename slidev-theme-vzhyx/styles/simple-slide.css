@@ -153,3 +153,32 @@
 	font-size: 5rem;
 	color: #e53935;
 }
+
+/* lamp layout - two columns */
+.lamp-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2rem;
+	align-items: center;
+}
+
+.lamp-left {
+	text-align: left;
+}
+
+.lamp-right {
+	display: grid;
+	place-items: center;
+}
+
+.lamp-right img {
+	max-width: 100%;
+	max-height: 80vh;
+	object-fit: contain;
+}
+
+/* smaller code block */
+.code-small {
+	transform: scale(0.8);
+	margin-top: -3rem;
+}
