@@ -270,3 +270,24 @@
 	place-items: center;
 	height: 100%;
 }
+
+/* xstate example layout - two columns */
+.xstate-example-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2rem;
+	align-items: center;
+	height: 100%;
+}
+
+.xstate-example-left {
+	display: grid;
+	place-items: center;
+	height: 100%;
+}
+
+.xstate-example-right {
+	display: grid;
+	place-items: center;
+	height: 100%;
+}

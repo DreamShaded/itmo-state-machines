@@ -392,3 +392,38 @@ layout: center
 - Statecharts
 
 </v-clicks>
+
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Пример: XState
+
+<div class="xstate-example-layout">
+  <div class="xstate-example-left">
+    <TrafficLight />
+  </div>
+  
+  <div class="xstate-example-right">
+    <XStateCode />
+  </div>
+</div>
+
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Выводы
+
+<v-clicks>
+
+1. Меньше флажков
+2. Меньше комбинаций флажков
+3. Разделяем на состояния
+4. Определяем строгие переходы
+
+</v-clicks>
