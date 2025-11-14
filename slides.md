@@ -62,7 +62,7 @@ layout: simple-slide
     </v-clicks>
   </div>
   <div class="lamp-right">
-    <img src="/images/slides/лампа.png" alt="Лампочка" />
+    <img src=" " alt="Лампочка" />
   </div>
 </div>
 
@@ -89,6 +89,9 @@ layout: simple-slide
 ---
 
 ## Код обычного программиста
+
+<div class="code-small">
+
 ````md magic-move
 ```jsx
 function Modal({ 
@@ -154,103 +157,7 @@ function Modal({
 }
 ```
 
-```jsx {13,19}
-function Modal({ 
-  isOpen, 
-  isLoading, 
-  isClosing, 
-  hasError, 
-  isAnimating,
-  shouldShowBackdrop,
-  backdropVisible,
-  backdropAnimating 
-}) {
-  return (
-    <>
-      {shouldShowBackdrop && backdropVisible && (
-        <div 
-          className={backdropAnimating ? 'backdrop animating' : 'backdrop'}
-          onClick={() => !isLoading && !isClosing && handleClose()}
-        />
-      )}
-      
-      {(isOpen || isClosing || isAnimating) && (
-        <div className={`modal ${isClosing ? 'closing' : ''} ${isAnimating ? 'animating' : ''}`}>
-          {isLoading && <Spinner />}
-          {hasError && <Error />}
-          {!isLoading && !hasError && <Content />}
-        </div>
-      )}
-    </>
-  );
-}
-```
-
-```jsx {13,19,21}
-function Modal({ 
-  isOpen, 
-  isLoading, 
-  isClosing, 
-  hasError, 
-  isAnimating,
-  shouldShowBackdrop,
-  backdropVisible,
-  backdropAnimating 
-}) {
-  return (
-    <>
-      {shouldShowBackdrop && backdropVisible && (
-        <div 
-          className={backdropAnimating ? 'backdrop animating' : 'backdrop'}
-          onClick={() => !isLoading && !isClosing && handleClose()}
-        />
-      )}
-      
-      {(isOpen || isClosing || isAnimating) && (
-        <div className={`modal ${isClosing ? 'closing' : ''} ${isAnimating ? 'animating' : ''}`}>
-          {isLoading && <Spinner />}
-          {hasError && <Error />}
-          {!isLoading && !hasError && <Content />}
-        </div>
-      )}
-    </>
-  );
-}
-```
-
-```jsx {13,19,21,22}
-function Modal({ 
-  isOpen, 
-  isLoading, 
-  isClosing, 
-  hasError, 
-  isAnimating,
-  shouldShowBackdrop,
-  backdropVisible,
-  backdropAnimating 
-}) {
-  return (
-    <>
-      {shouldShowBackdrop && backdropVisible && (
-        <div 
-          className={backdropAnimating ? 'backdrop animating' : 'backdrop'}
-          onClick={() => !isLoading && !isClosing && handleClose()}
-        />
-      )}
-      
-      {(isOpen || isClosing || isAnimating) && (
-        <div className={`modal ${isClosing ? 'closing' : ''} ${isAnimating ? 'animating' : ''}`}>
-          {isLoading && <Spinner />}
-          {hasError && <Error />}
-          {!isLoading && !hasError && <Content />}
-        </div>
-      )}
-    </>
-  );
-}
-```
-
-```jsx {13,19,21,22,23}
+```jsx {13,19,21,22,23,24}
 function Modal({ 
   isOpen, 
   isLoading, 
@@ -282,3 +189,65 @@ function Modal({
 }
 ```
 ````
+
+</div>
+
+
+---
+transition: slide-left
+layout: center
+---
+
+## Почему работа с состояниями вызывает дискомфорт?
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Boolean Explosion 
+
+<div class="explosion-layout">
+  <div class="explosion-left">
+    <ul>
+      <v-click>
+        <li>1 флаг → 2 состояния</li>
+      </v-click>
+      <v-click>
+        <li>2 флага → 4 состояния</li>
+      </v-click>
+      <v-click>
+        <li>3 флага → 8 состояний</li>
+      </v-click>
+      <v-click>
+        <li>4 флага → 16 состояний</li>
+      </v-click>
+      <v-click>
+        <li>5 флагов → 32 состояния</li>
+      </v-click>
+      <v-click>
+        <li>6 флагов → 64 состояния</li>
+      </v-click>
+    </ul>
+  </div>
+  <div class="explosion-right">
+    <v-click>
+      <img src="/images/slides/лампа.png" alt="Визуализация" class="explosion-img" />
+    </v-click>
+    <v-click>
+      <img src="/images/slides/font-size.png" alt="Визуализация" class="explosion-img" />
+    </v-click>
+    <v-click>
+      <img src="/images/slides/лампа.png" alt="Визуализация" class="explosion-img" />
+    </v-click>
+    <v-click>
+      <img src="/images/slides/font-size.png" alt="Визуализация" class="explosion-img" />
+    </v-click>
+    <v-click>
+      <img src="/images/slides/лампа.png" alt="Визуализация" class="explosion-img" />
+    </v-click>
+    <v-click>
+      <img src="/images/slides/font-size.png" alt="Визуализация" class="explosion-img" />
+    </v-click>
+  </div>
+</div>
