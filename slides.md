@@ -293,28 +293,18 @@ layout: simple-slide
   <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
     <!-- Состояние: Красный -->
     <circle cx="150" cy="200" r="50" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
-    <text x="150" y="210" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Красный</text>
-    
     <!-- Состояние: Жёлтый -->
     <circle cx="300" cy="200" r="50" fill="#fbbf24" stroke="#d97706" stroke-width="3"/>
-    <text x="300" y="210" text-anchor="middle" fill="#78350f" font-size="18" font-weight="bold">Жёлтый</text>
-    
     <!-- Состояние: Зелёный -->
     <circle cx="450" cy="200" r="50" fill="#16a34a" stroke="#15803d" stroke-width="3"/>
-    <text x="450" y="210" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Зелёный</text>
-    
     <!-- Переход: Красный → Жёлтый -->
-    <path d="M 200 200 L 250 200" stroke="#4b5563" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-    
+    <path d="M 200 200 L 250 200" stroke="#4b5563" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>    
     <!-- Переход: Жёлтый → Зелёный -->
     <path d="M 350 200 L 400 200" stroke="#4b5563" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-    
     <!-- Переход: Зелёный → Жёлтый (обратный) -->
     <path d="M 400 200 L 350 200" stroke="#4b5563" stroke-width="3" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead-reverse)"/>
-    
     <!-- Переход: Жёлтый → Красный (обратный) -->
     <path d="M 250 200 L 200 200" stroke="#4b5563" stroke-width="3" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead-reverse)"/>
-    
     <!-- Определение стрелок -->
     <defs>
       <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
@@ -326,3 +316,79 @@ layout: simple-slide
     </defs>
   </svg>
 </div>
+
+
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Типы state машин
+
+<div class="automata-layout">
+  <div class="automata-left">
+    <v-clicks>
+      <ul>
+        <li><strong>Автомат Мура</strong> — новое состояние зависит только от предыдущего состояния</li>
+        <li><strong>Автомат Милли</strong> — от предыдущего состояния и входных данных</li>
+        <li>Во фронтенде входные данные - события, логичнее всего использовать автоматы Милли </li>
+      </ul>
+    </v-clicks>
+  </div>
+  
+  <div class="automata-right">
+    <AutomataDiagram />
+  </div>
+</div>
+
+---
+transition: slide-left
+layout: simple-slide
+---
+
+## Redux
+
+<v-clicks>
+
+**Связь с Redux: reducers должны быть стейт-машинами**
+
+В документации Redux прямо говорится:
+
+- reducer — это описание того, как состояние меняется
+
+Но на практике большинство редьюсеров — это просто:
+
+- набор реакций на action,
+- без описания валидных состояний,
+- без ограничений переходов,
+- без структуры.
+
+То есть это не state машины, а "набор переходов".
+
+Из-за этого часто возникают неявные баги.
+
+</v-clicks>
+
+---
+transition: slide-left
+layout: center
+---
+
+## Нужно думать состояниями
+
+---
+transition: slide-left
+layout: center
+---
+
+## Инструменты
+
+<v-clicks>
+
+- Самостоятельный учёт без библиотек
+- XState
+- Robot
+- Statecharts
+
+</v-clicks>
