@@ -62,7 +62,7 @@ layout: simple-slide
     </v-clicks>
   </div>
   <div class="lamp-right">
-    <img src=" " alt="Лампочка" />
+    <img src="/images/slides/лампа.png" alt="Лампочка" />
   </div>
 </div>
 
