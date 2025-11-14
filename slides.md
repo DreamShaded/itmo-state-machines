@@ -92,8 +92,7 @@ layout: simple-slide
 
 <div class="code-small">
 
-````md magic-move
-```jsx
+```jsx {|13|13,16|13,16,20|13,16,20,21|13,16,20,21,24}
 function Modal({ 
   isOpen, 
   isLoading, 
@@ -124,71 +123,6 @@ function Modal({
   );
 }
 ```
-
-```jsx {13}
-function Modal({ 
-  isOpen, 
-  isLoading, 
-  isClosing, 
-  hasError, 
-  isAnimating,
-  shouldShowBackdrop,
-  backdropVisible,
-  backdropAnimating 
-}) {
-  return (
-    <>
-      {shouldShowBackdrop && backdropVisible && (
-        <div 
-          className={backdropAnimating ? 'backdrop animating' : 'backdrop'}
-          onClick={() => !isLoading && !isClosing && handleClose()}
-        />
-      )}
-      
-      {(isOpen || isClosing || isAnimating) && (
-        <div className={`modal ${isClosing ? 'closing' : ''} ${isAnimating ? 'animating' : ''}`}>
-          {isLoading && <Spinner />}
-          {hasError && <Error />}
-          {!isLoading && !hasError && <Content />}
-        </div>
-      )}
-    </>
-  );
-}
-```
-
-```jsx {13,19,21,22,23,24}
-function Modal({ 
-  isOpen, 
-  isLoading, 
-  isClosing, 
-  hasError, 
-  isAnimating,
-  shouldShowBackdrop,
-  backdropVisible,
-  backdropAnimating 
-}) {
-  return (
-    <>
-      {shouldShowBackdrop && backdropVisible && (
-        <div 
-          className={backdropAnimating ? 'backdrop animating' : 'backdrop'}
-          onClick={() => !isLoading && !isClosing && handleClose()}
-        />
-      )}
-      
-      {(isOpen || isClosing || isAnimating) && (
-        <div className={`modal ${isClosing ? 'closing' : ''} ${isAnimating ? 'animating' : ''}`}>
-          {isLoading && <Spinner />}
-          {hasError && <Error />}
-          {!isLoading && !hasError && <Content />}
-        </div>
-      )}
-    </>
-  );
-}
-```
-````
 
 </div>
 
